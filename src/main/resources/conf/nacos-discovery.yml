@@ -1,0 +1,7 @@
+spring:
+  cloud:
+      nacos:
+        discovery:
+          # ip: 127.0.0.1
+          server-addr: localhost:8848
+          namespace: ${my.nacos-discovery-namespace:public}

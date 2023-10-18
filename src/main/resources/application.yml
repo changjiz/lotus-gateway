@@ -1,5 +1,22 @@
+# Tomcat
+server:
+  port: 80
+
 spring:
+  application:
+    # 应用名称
+    name: lotus-gateway
+  profiles:
+    active: dev
   cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        #        namespace: 10
+        file-extension: yml
+        shared-configs:
+          - redis.yml
+          - nacos-discovery.yml
     gateway:
       discovery:
         locator:
@@ -24,3 +41,7 @@ security:
       - /user-center/generateKey
       - /user-center/logout
       - /user-center/login
+
+logging:
+  file:
+    path: ./logs/
